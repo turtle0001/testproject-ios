@@ -69,9 +69,6 @@ extension HomeController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let album = albums[indexPath.row]
-    guard let image = album.url
-    
     let detailController = DetailController()
     navigationController?.pushViewController(detailController, animated: true)
   }

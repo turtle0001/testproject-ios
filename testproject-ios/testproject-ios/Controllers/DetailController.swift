@@ -10,19 +10,20 @@ import LBTATools
 
 class DetailController: UIViewController {
   
-  let titleLabel = UILabel(text: "Title", font: .boldSystemFont(ofSize: 15), numberOfLines: 0)
-  let albumImageView = UIImageView(image: nil, contentMode: .scaleAspectFill)
-  
+  let titleLabel = UILabel(text: "Title", font: .boldSystemFont(ofSize: 18), numberOfLines: 0)
+//  let albumImageView = UIImageView(image: nil, contentMode: .scaleAspectFill)
+  let albumImageView = UIImageView(backgroundColor: .gray)
 
   override func viewDidLoad() {
     view.backgroundColor = .white
     
     albumImageView.layer.cornerRadius = 5
     
-    view.stack(albumImageView.withWidth(60).withHeight(60),
-           titleLabel,
-           spacing: 16).withMargins(.init(top: 4, left: 16, bottom: 4, right: 16))
-  
+    view.stack(albumImageView.withHeight(300),
+               view.stack(titleLabel.withHeight(60), UIView()),
+               spacing: 4).withMargins(.allSides(16))
+    
+    
   }
   
 }
