@@ -11,7 +11,7 @@ import SDWebImage
 
 class DetailController: UIViewController {
   
-  var album: Album? = nil
+  var viewModel: DetailViewModel!
   
   let titleLabel = UILabel(text: "Title", font: .boldSystemFont(ofSize: 18), numberOfLines: 0)
   let albumImageView = UIImageView(image: nil, contentMode: .scaleAspectFill)
@@ -35,9 +35,8 @@ class DetailController: UIViewController {
   }
   
   private func contentBinder() {
-    guard let album = album else { return }
-    titleLabel.text = album.title
-    albumImageView.sd_setImage(with: URL(string: album.url))
+    titleLabel.text = viewModel.getTitle()
+    albumImageView.sd_setImage(with: viewModel.getUrl())
   }
   
 }

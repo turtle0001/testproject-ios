@@ -73,7 +73,8 @@ class HomeController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let detailController = DetailController()
     let selectedAlbum = albums[indexPath.row]
-    detailController.album = selectedAlbum
+    let detailVM = DetailViewModel(album: selectedAlbum)
+    detailController.viewModel = detailVM
     navigationController?.pushViewController(detailController, animated: true)
   }
 }
