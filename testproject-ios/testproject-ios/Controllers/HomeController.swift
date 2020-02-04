@@ -14,8 +14,8 @@ import UIKit
 
 class HomeController: UITableViewController {
   
-  var albums = [Album]()
-
+  var viewModel = HomeViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -30,49 +30,27 @@ class HomeController: UITableViewController {
   private func fetchAlbums() {
     let hud = JGProgressHUD(style: .dark)
     hud.show(in: view)
-    
-    let url = "https://jsonplaceholder.typicode.com/photos"
-    Alamofire.request(url)
-      .validate(statusCode: 200..<300)
-      .responseData { (dataResp) in
-        
-        hud.dismiss()
-        
-        if let err = dataResp.error {
-          print("Failed to fetch posts:", err)
-          return
-        }
-        
-        guard let data = dataResp.data else { return }
-        do {
-          let albums = try JSONDecoder().decode([Album].self, from: data)
-          self.albums = albums
-          self.tableView.reloadData()
-        } catch {
-          print(error)
-        }
-        
-        self.dismiss(animated: true)
+    viewModel.fetchAlbums { (err) in
+      hud.dismiss()
+      if let err = err {
+        print("Failed to fetch posts:", err)
+      } else {
+        self.tableView.reloadData()
+      }
     }
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return albums.count
+    return viewModel.numberOfRowsInSection(section: section)
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = AlbumCell(style: .subtitle, reuseIdentifier: nil)
-    let album = albums[indexPath.row]
-    
-    cell.albumImageView.sd_setImage(with: URL(string: album.thumbnailUrl))
-    cell.titleLabel.text = album.title
-    
-    return cell
+    return viewModel.tableView(tableView, cellForRowAt: indexPath)
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let detailController = DetailController()
-    let selectedAlbum = albums[indexPath.row]
+    let selectedAlbum = viewModel.getAlbum(at: indexPath)
     let detailVM = DetailViewModel(album: selectedAlbum)
     detailController.viewModel = detailVM
     navigationController?.pushViewController(detailController, animated: true)

@@ -7,8 +7,15 @@
 //
 
 import LBTATools
+import SDWebImage
 
 class AlbumCell: UITableViewCell {
+  
+  var viewModel: AlbumCellViewModel! {
+    didSet {
+      contentBinder()
+    }
+  }
   
   let titleLabel = UILabel(text: "Title", font: .boldSystemFont(ofSize: 15), numberOfLines: 0)
   let albumImageView = UIImageView(image: nil, contentMode: .scaleAspectFill)
@@ -24,7 +31,12 @@ class AlbumCell: UITableViewCell {
   }
   
   required init?(coder: NSCoder) {
-    fatalError()
+    super.init(coder: coder)
+  }
+  
+  func contentBinder() {
+    titleLabel.text = viewModel.getTitle()
+    albumImageView.sd_setImage(with: viewModel.getThumbnailUrl())
   }
   
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A111BDC23E9B8A800EB5B0F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A111BDB23E9B8A800EB5B0F /* HomeViewModel.swift */; };
 		5A111BDE23E9B8BA00EB5B0F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A111BDD23E9B8BA00EB5B0F /* DetailViewModel.swift */; };
+		5A111BE023E9BFC400EB5B0F /* AlbumCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A111BDF23E9BFC400EB5B0F /* AlbumCellViewModel.swift */; };
 		5A19FBF123E94DEF00CC0250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A19FBF023E94DEF00CC0250 /* AppDelegate.swift */; };
 		5A19FBF323E94DEF00CC0250 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A19FBF223E94DEF00CC0250 /* SceneDelegate.swift */; };
 		5A19FBF523E94DEF00CC0250 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A19FBF423E94DEF00CC0250 /* HomeController.swift */; };
@@ -25,6 +26,7 @@
 		19700450841FAA11C7230A1D /* Pods-testproject-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testproject-ios.release.xcconfig"; path = "Target Support Files/Pods-testproject-ios/Pods-testproject-ios.release.xcconfig"; sourceTree = "<group>"; };
 		5A111BDB23E9B8A800EB5B0F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5A111BDD23E9B8BA00EB5B0F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		5A111BDF23E9BFC400EB5B0F /* AlbumCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellViewModel.swift; sourceTree = "<group>"; };
 		5A19FBED23E94DEF00CC0250 /* testproject-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testproject-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A19FBF023E94DEF00CC0250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A19FBF223E94DEF00CC0250 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				5A111BDB23E9B8A800EB5B0F /* HomeViewModel.swift */,
 				5A111BDD23E9B8BA00EB5B0F /* DetailViewModel.swift */,
+				5A111BDF23E9BFC400EB5B0F /* AlbumCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				5A19FBF123E94DEF00CC0250 /* AppDelegate.swift in Sources */,
 				5A19FBF323E94DEF00CC0250 /* SceneDelegate.swift in Sources */,
 				5A19FC0E23E9619F00CC0250 /* AlbumCell.swift in Sources */,
+				5A111BE023E9BFC400EB5B0F /* AlbumCellViewModel.swift in Sources */,
 				5A19FC1023E9668A00CC0250 /* DetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
