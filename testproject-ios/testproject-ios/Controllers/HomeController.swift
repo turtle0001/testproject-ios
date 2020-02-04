@@ -6,10 +6,11 @@
 //  Copyright © 2020 Joash Tubaga. All rights reserved.
 //
 
-import UIKit
+
 import Alamofire
 import JGProgressHUD
 import SDWebImage
+import UIKit
 
 class HomeController: UITableViewController {
   
@@ -18,12 +19,15 @@ class HomeController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationItem.title = "Test Project"
-    
+    setupViews()
     fetchAlbums()
   }
   
-  @objc fileprivate func fetchAlbums() {
+  private func setupViews() {
+    navigationItem.title = "Test Project"
+  }
+  
+  private func fetchAlbums() {
     let hud = JGProgressHUD(style: .dark)
     hud.show(in: view)
     
@@ -51,9 +55,7 @@ class HomeController: UITableViewController {
         self.dismiss(animated: true)
     }
   }
-}
-
-extension HomeController {
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return albums.count
   }
@@ -70,6 +72,8 @@ extension HomeController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let detailController = DetailController()
+    let selectedAlbum = albums[indexPath.row]
+    detailController.album = selectedAlbum
     navigationController?.pushViewController(detailController, animated: true)
   }
 }
