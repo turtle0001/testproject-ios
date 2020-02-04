@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,15 +63,23 @@
 		5A19FBEF23E94DEF00CC0250 /* testproject-ios */ = {
 			isa = PBXGroup;
 			children = (
-				5A19FBF023E94DEF00CC0250 /* AppDelegate.swift */,
-				5A19FBF223E94DEF00CC0250 /* SceneDelegate.swift */,
 				5A19FBF423E94DEF00CC0250 /* ViewController.swift */,
 				5A19FBF623E94DEF00CC0250 /* Main.storyboard */,
+				5A19FC0423E94EA200CC0250 /* Helper Files */,
+			);
+			path = "testproject-ios";
+			sourceTree = "<group>";
+		};
+		5A19FC0423E94EA200CC0250 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A19FBF023E94DEF00CC0250 /* AppDelegate.swift */,
+				5A19FBF223E94DEF00CC0250 /* SceneDelegate.swift */,
 				5A19FBF923E94DF200CC0250 /* Assets.xcassets */,
 				5A19FBFB23E94DF200CC0250 /* LaunchScreen.storyboard */,
 				5A19FBFE23E94DF200CC0250 /* Info.plist */,
 			);
-			path = "testproject-ios";
+			path = "Helper Files";
 			sourceTree = "<group>";
 		};
 		8985AB6132B78CB01EF99B35 /* Pods */ = {
@@ -80,7 +88,6 @@
 				FF61317CE912C3264367060F /* Pods-testproject-ios.debug.xcconfig */,
 				19700450841FAA11C7230A1D /* Pods-testproject-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -356,7 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V735H322ZS;
-				INFOPLIST_FILE = "testproject-ios/Info.plist";
+				INFOPLIST_FILE = "testproject-ios/Helper Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V735H322ZS;
-				INFOPLIST_FILE = "testproject-ios/Info.plist";
+				INFOPLIST_FILE = "testproject-ios/Helper Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
